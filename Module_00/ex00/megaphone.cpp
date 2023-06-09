@@ -1,5 +1,5 @@
 #include <iostream>   
-
+#include <algorithm>
 int main(int nb, char **str)
 {
 	if (nb <= 1)
