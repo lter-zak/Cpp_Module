@@ -6,6 +6,7 @@ MAGENTA ='\x1b[35m'
 NAME		= phonebook
 SRCS		= $(wildcard *.cpp)
 OBJS		= $(SRCS:.cpp=.o)
+HEADER		= $(wildcard *.hpp)
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
 RM			= rm -f
 CPP			= c++

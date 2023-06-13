@@ -9,6 +9,7 @@ class PhoneBook {
 		PhoneBook();
 		~PhoneBook();
 		void Add();
+		void Search();
 
 	private:
 		int index;

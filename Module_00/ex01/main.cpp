@@ -25,15 +25,21 @@ int main()
 	while(true)
 	{
 		std::cout << "[ Imput phonebook commands ] --> ";
-		std::cin >> str;
+		std::getline (std::cin,str);
 		if (!(str.compare("ADD")))
-			PhoneBook.Add();
-		else if (str.compare("SEARCH"))
 		{
-			
+			PhoneBook.Add();
 		}
-		else if(str.compare("EXIT"))
+		else if (!(str.compare("SEARCH")))
+		{
+			PhoneBook.Search();
+		}
+		else if(!(str.compare("EXIT")))
 			return (0);
+		if (std::cin.eof())
+		{
+			return (0);
+		}
 		str.clear();
 	}
 	return (0);

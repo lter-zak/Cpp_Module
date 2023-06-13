@@ -1,5 +1,6 @@
 #include <iostream>   
 #include <algorithm>
+
 int main(int nb, char **str)
 {
 	if (nb <= 1)
@@ -9,6 +10,6 @@ int main(int nb, char **str)
 		std::string s = str[i]; 
 		std::transform(s.begin(), s.end(), s.begin(), ::toupper);
 		//std::transform(str[1], ::strlen(str[1]), str, ::toupper);
-		std::cout<<s<<std::endl;
 	}
+		std::cout<<s<<std::endl;
 }
