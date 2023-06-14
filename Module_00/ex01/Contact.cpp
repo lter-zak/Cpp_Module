@@ -34,6 +34,7 @@ void Contact::set_first_name(std::string str)
 {
     first_name = str;
 }
+
 void Contact::set_last_name(std::string str)
 {
     last_name = str;

@@ -4,7 +4,7 @@ YELLOW= '\x1b[32m'
 MAGENTA ='\x1b[35m'
 
 NAME		= megafhone
-SRCS		= $(wildcard *.cpp)
+SRCS		=  *.cpp
 OBJS		= $(SRCS:.cpp=.o)
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
 RM			= rm -f
@@ -15,7 +15,7 @@ all: $(NAME)
 
 $(NAME) : $(OBJS)
 		@echo $(NONE)$(BLUE) "\n\t\t🤹 Compiling $(NAME)... \n" $(NONE)
-		$(CPP) $(CFLAGS) $(OBJS) -o $(NAME)
+		@$(CPP) $(CFLAGS) $(OBJS) -o $(NAME)
 		@echo $(NONE)$(BLUE)"\n\t\t😱 Compiled   $(NAME)\n"$(NONE)
 
 clean	:
