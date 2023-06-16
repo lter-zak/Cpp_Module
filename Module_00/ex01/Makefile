@@ -7,16 +7,16 @@ NAME		= phonebook
 SRCS		= $(wildcard *.cpp)
 OBJS		= $(SRCS:.cpp=.o)
 HEADER		= $(wildcard *.hpp)
-CFLAGS		= -Wall -Wextra -Werror -std=c++98
+CXXFLAGS		= -Wall -Wextra -Werror -std=c++98
 RM			= rm -f
-CPP			= c++
+#CPP			= c++
 
 
 all: $(NAME)
 
 $(NAME) : $(OBJS)
 		@echo $(NONE)$(BLUE) "\n\t\t🤹 Compiling $(NAME)... \n" $(NONE)
-		$(CPP) $(CFLAGS)  $(OBJS) -o $(NAME)
+		$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 		@echo $(NONE)$(BLUE)"\n\t\t😱 Compiled   $(NAME)\n"$(NONE)
 
 clean	:

@@ -18,24 +18,22 @@
 
 int main()
 {
-	PhoneBook PhoneBook;
+	PhoneBook PhoneBook1;
 	std::string str;
-	//std::cout << str << std::endl;
-
 	std::cout<<BOLD MAGENTA<< "\t\t  Welcome to PHONEBOOK\n"<<RESET<<std::endl;
 	while(true)
 	{
 		std::cout<<BLUE<<"\t\t---Phonebook commands---\n"<<std::endl;
-		std::cout<<BG_CYAN<<"\t[ ADD ]\t\t[ SEARCH ]\t[EXIT]"<<RESET<<std::endl<<std::endl;
-		std::cout<<MAGENTA << "[ Imput phonebook command ] --> ";
+		std::cout<<BG_CYAN<<"\t[ ADD ]\t\t[ SEARCH ]\t[ EXIT ]"<<RESET<<std::endl<<std::endl;
+		std::cout<<MAGENTA << "[ Input phonebook command ] --> ";
 		std::getline (std::cin,str);
 		if (!(str.compare("ADD")))
 		{
-			PhoneBook.Add();
+			PhoneBook1.Add();
 		}
 		else if (!(str.compare("SEARCH")))
 		{
-			PhoneBook.Search();
+			PhoneBook1.Search();
 		}
 		else if(!(str.compare("EXIT")))
 		{

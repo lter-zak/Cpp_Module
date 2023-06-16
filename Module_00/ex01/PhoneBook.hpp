@@ -27,9 +27,15 @@ class PhoneBook {
 		~PhoneBook();
 		void Add();
 		void Search();
-
+		int all_digit(std::string str);
+        int all_char(std::string str);
+        void print_space(int len);
+        void print_part_str(std::string str);
+		int if_smt_wrong(std::string str, int index);
+		void print_all_contacts();
 	private:
 		int index;
+		int count;
 		Contact contact[8];
 };
 
