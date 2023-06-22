@@ -94,9 +94,9 @@ void PhoneBook::print_all_contacts()
      int i = 0;
     int true_len = 10;
     int smt = 0;
-    while((contact[i].get_first_name()).length() !=0)
+    while(i < 8 && i < count)
     { 
-        std::cout<<BLUE<<"         ";
+		std::cout<<BLUE<<"         ";
         std::cout<<i;
         std::cout<<"|";
         if((contact[i].get_first_name()).length() <=10)
@@ -137,9 +137,14 @@ void PhoneBook::Search()
     int         index;
 
     std::cout<<std::endl;
+	if (count == 0)
+	{
+		std::cout<<BOLD<<GREEN<<"\n\t\t[ You do not heve contact yet ]\n ";
+		return ;
+	}
     print_all_contacts();
-    std::cout<<MAGENTA<<"[ Please insert the contact Index ]--> ";
-    std::cin>>str;
+	std::cout<<MAGENTA<<"[ Please insert the contact Index ]--> ";
+	std::getline (std::cin,str);
     if(str.length() == 1 && str[0]>='0' && str[0] <= '7')
     {
         index = atoi(str.c_str());
@@ -157,5 +162,6 @@ void PhoneBook::Search()
     }
     else 
       std::cout<<"invalid index"<<std::endl;
-    if(std::cin.eof()){return ;} 
+   if(std::cin.eof()){return ;}
+   //std::cout<<RESET;
 }

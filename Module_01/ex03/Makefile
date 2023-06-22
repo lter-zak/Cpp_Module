@@ -3,19 +3,20 @@ BLUE = '\x1b[36m'
 YELLOW= '\x1b[32m'
 MAGENTA ='\x1b[35m'
 
-NAME		= megafhone
+NAME		= Weapon
 SRCS    	= $(shell find . -name "*.cpp")
 OBJS		= $(SRCS:.cpp=.o)
-CFLAGS		= -Wall -Wextra -Werror -std=c++98
+HEADER		= $(shell find . -name "*.hpp")
+CXXFLAGS		= -Wall -Wextra -Werror -std=c++98
 RM			= rm -f
-CPP			= c++
+#CPP			= c++
 
 
 all: $(NAME)
 
 $(NAME) : $(OBJS)
 		@echo $(NONE)$(BLUE) "\n\t\t🤹 Compiling $(NAME)... \n" $(NONE)
-		$(CPP) $(CFLAGS) $(OBJS) -o $(NAME)
+		$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 		@echo $(NONE)$(BLUE)"\n\t\t😱 Compiled   $(NAME)\n"$(NONE)
 
 clean	:

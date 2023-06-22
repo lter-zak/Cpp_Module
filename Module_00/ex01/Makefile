@@ -4,9 +4,9 @@ YELLOW= '\x1b[32m'
 MAGENTA ='\x1b[35m'
 
 NAME		= phonebook
-SRCS		= $(wildcard *.cpp)
+SRCS    	= $(shell find . -name "*.cpp")
 OBJS		= $(SRCS:.cpp=.o)
-HEADER		= $(wildcard *.hpp)
+HEADER		= $(shell find . -name "*.hpp")
 CXXFLAGS		= -Wall -Wextra -Werror -std=c++98
 RM			= rm -f
 #CPP			= c++
