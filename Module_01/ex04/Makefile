@@ -9,7 +9,7 @@ OBJS		= $(SRCS:.cpp=.o)
 HEADER		= $(shell find . -name "*.hpp")
 CXXFLAGS		= -Wall -Wextra -Werror -std=c++98
 RM			= rm -f
-#CPP			= c++
+CPP			= c++
 
 
 all: $(NAME)
