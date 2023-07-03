@@ -1,41 +1,58 @@
-#include <fstream>
-#include <iostream>
-
+// #include <fstream>
+// #include <iostream>
+#include "replace.hpp"
 int main(int nb, char **str)
 {
 	(void)str;
 	(void)nb;
 	if ( nb == 4)
 	{
-		std::string		S1;
-		std::string		S2;
-		std::ifstream myFile;
-		std::string fileStr;
-		std::string nweFileName;
-		std::ifstream oldFile;
+		replace re(str[2], str[3], str[1]);
+		//std::string		S1;
+		//std::string		S2;
+		//std::string		fileName;
+		// std::string 	fileStr;
+		// std::ifstream oldFile;
 
-		S1		 = str[2];
-		S2		 = str[3];
+		// std::string inputStr;
+		
+		//int index;
 
-		nweFileName = str[1];
-		std::ofstream newFile(nweFileName + ".replace");
-		oldFile.open ("test.txt");
-		if(!oldFile) 
-		{
-			std::cerr << "Error: file could not be opened" <<std::endl;
-			return(0);
-		}
-		else
-		{
-			while ( getline(oldFile, fileStr))
-			{
-				std::cout<<fileStr<<std::endl;
-			}
-		}
+		// S1		 = str[2];
+		// S2		 = str[3];
+		// fileName = str[1];
+		//oldFile.open (str[1]);
+		// if(!oldFile) 
+		// {
+		// 	std::cerr << "Error: file could not be opened";
+		// 	return(0);
+		// }
+		// else
+		// {
+		// 	std::ofstream newFile(fileName + ".replace");
+		// 	while (!oldFile.eof())
+		// 	{
+		// 		getline(oldFile, fileStr);
+		// 		index = fileStr.find(S1);
+		// 		std::cout<<"string = "<<fileStr<<std::endl;
+		// 		while (index != -1)
+		// 		{
+		// 			std::cout<<"index = "<<index<<std::endl;
+		// 			fileStr.erase(index, S1.length());
+		// 			fileStr.insert(index, S2);
+		// 			index = fileStr.find(S1);
+		// 			std::cout<<"inputStr  = "<<fileStr<<std::endl;
+		// 		}
+		// 		newFile<<fileStr<< "\n";
+		// 	}
+		// }
+
+		re.doTheJob();
+
 	}
 	else
 	{
-		std::cerr << "not enaugh arguments" <<std::endl;
+		std::cerr << "Not enaugh arguments" <<std::endl;
 	}
-		return (0);
+	return (0);
 }
