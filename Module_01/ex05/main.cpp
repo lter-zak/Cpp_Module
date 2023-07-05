@@ -6,7 +6,9 @@ int main()
     std::string level;
     while(true)
     {
-        getline(std::cin, level);
-        obj.complain(level);
+        //if (std::cin.eof()){return (0);};
+        if(getline(std::cin, level))
+            obj.complain(level);
+        else return(0);
     }
 }
