@@ -38,7 +38,6 @@ Fixed::Fixed(const Fixed &oldObj)
 
 int Fixed::getRawBits() const
 {
-     std::cout<<"getRawBits member function called"<<std::endl;
     return ( _fixedPoint);
 }
 
