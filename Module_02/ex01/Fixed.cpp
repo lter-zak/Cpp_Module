@@ -57,6 +57,7 @@ void Fixed::setRawBits(const int num)
     _fixedPoint = num;
 }
 
+//fixed point to floatg
 float   Fixed::toFloat(void) const
 {
    // std::cout<<"fixed num == "<<(float)(this-> _fixedPoint) / (1 << this->_fractionalBits)<<std::endl;
