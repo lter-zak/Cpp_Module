@@ -7,7 +7,7 @@ int main(int nb, char **str)
 	(void)nb;
 	if ( nb == 4)
 	{
-		replace re(str[2], str[3], str[1]);
+		Replace re(str[2], str[3], str[1]);
 		//std::string		S1;
 		//std::string		S2;
 		//std::string		fileName;

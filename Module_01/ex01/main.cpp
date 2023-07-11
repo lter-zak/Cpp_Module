@@ -4,7 +4,7 @@ int main()
 {
 	Zombie *newZombie = NULL;
 
-	zombieHorde(3, "Valodik");
+	zombieHorde(5, "Valodik");
 	delete[] newZombie;
 	return (0);
 }

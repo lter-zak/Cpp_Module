@@ -3,12 +3,11 @@
 int main()
 {
 	Zombie randomZombie;
-	Zombie* newZombie = NULL;
+	Zombie* newZombied;
 
 	randomZombie.randomChump("ASHOT");
-	newZombie = newZombie->newZombie("VAZGEN");
-	newZombie->announce();
-	//std::cout<<std::endl;
-	delete newZombie;
+	newZombied = newZombie("VAZGEN");
+	newZombied->announce();
+	delete newZombied;
 	return (0);
 }

@@ -33,6 +33,7 @@ class ClapTrap
         void        takeDamage(unsigned int amount);
         void        beRepaired(unsigned int amount);
         void        printAttributes();
+		void 		setAttackDemege(int nb);
 
     private:
         std::string _name;

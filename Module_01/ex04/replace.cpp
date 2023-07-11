@@ -1,15 +1,15 @@
 #include "replace.hpp"
 
- replace::replace(std::string s1, std::string s2, std::string fileName)
+ Replace::Replace(std::string s1, std::string s2, std::string fileName)
  {
     _s1 = s1;
     _s2 = s2;
     _fileName = fileName;
  }
 
- replace::~replace(){}
+ Replace::~Replace(){}
 
- int replace::doTheJob()
+ int Replace::doTheJob()
  {
     int             index;
     std::string 	fileStr;
@@ -32,10 +32,11 @@
             {
                 fileStr.erase(index, _s1.length());
                 fileStr.insert(index, _s2);
-                index = fileStr.find(_s1);
+                index = fileStr.find(_s1 , index + _s2.length());
             }
             newFile<<fileStr<< "\n";
         }
+		oldFile.close();
     }
     return(0);
  }

@@ -58,6 +58,10 @@ void    ClapTrap::attack(const std::string& target)
     }
 
 }
+void	ClapTrap::setAttackDemege(int nb)
+{
+		_attackDemege = nb;
+}
 
 void    ClapTrap::takeDamage(unsigned int amount)
 {
@@ -69,7 +73,7 @@ void    ClapTrap::takeDamage(unsigned int amount)
     else
     {
         _hitPoints -= amount; 
-        std::cout<<"ClapTrap "<<_name<<" lose "<<amount<<" of points"<<std::endl;
+        std::cout<<"ClapTrap "<<_name<<" lost "<<amount<<" of points"<<std::endl;
     }
 }
 

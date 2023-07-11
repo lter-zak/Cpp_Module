@@ -5,10 +5,10 @@
 #include <iostream>
 
 
-class replace{
+class Replace{
     public:
-        replace(std::string s1, std::string s2, std::string fileName);
-        ~replace();
+        Replace(std::string s1, std::string s2, std::string fileName);
+        ~Replace();
         int doTheJob();
     private:
         std::string _s1;

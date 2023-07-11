@@ -38,8 +38,12 @@ void Harl::complain(std::string level)
     void        (Harl::*memberFuncPtr[4]) () = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
     std::string chLevel[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
     int         i = 0;
-
-    for ( ; i <4 && chLevel[i].compare(level) != 0; i++);
+    for ( ; i < 4 && chLevel[i].compare(level) != 0; i++);
+	if (i >= 4 )
+	{
+		std::cout<<"Not valid input\n";
+		return ;
+	}
     (this->*memberFuncPtr[i])();
 }
     
