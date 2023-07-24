@@ -5,7 +5,7 @@ ClapTrap::ClapTrap()
     std::cout<<"Default constructor called"<<std::endl;
     _hitPoints = 10;
     _energyPoints = 10;
-    _attackDemege = 0;
+    _attackDamage = 0;
 }
 
 ClapTrap::ClapTrap(std::string name)
@@ -14,7 +14,7 @@ ClapTrap::ClapTrap(std::string name)
     _name = name;
     _hitPoints = 10;
     _energyPoints = 10;
-    _attackDemege = 0;
+    _attackDamage = 0;
 }
 
 ClapTrap::~ClapTrap()
@@ -26,30 +26,43 @@ ClapTrap::ClapTrap(const ClapTrap& other)
 {
     std::cout<<"Copy constructor called"<<std::endl;
     this->_name         = other._name;
-    this->_name         = other._name;
     this->_hitPoints    = other._hitPoints;
     this->_energyPoints = other._energyPoints;
-    this->_attackDemege = other._attackDemege;
+    this->_attackDamage = other._attackDamage;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap &oldObj)
 {
-    std::cout<<"Copy assignment operator called"<<std::endl;
-    this->_name         = oldObj._name;
-    this->_hitPoints    = oldObj._hitPoints;
-    this->_energyPoints = oldObj._energyPoints;
-    this->_attackDemege = oldObj._attackDemege;
+	if (this != &oldObj)
+	{
+		std::cout<<"Copy assignment operator called"<<std::endl;
+		this->_name         = oldObj._name;
+		this->_hitPoints    = oldObj._hitPoints;
+		this->_energyPoints = oldObj._energyPoints;
+		this->_attackDamage = oldObj._attackDamage;
+	}
     return (*this);
 }
+
+// void ClapTrap::operator=(const ClapTrap &oldObj)
+// {
+// 	if (this != &oldObj)
+// 	{
+// 		std::cout<<"Copy assignment operator called"<<std::endl;
+// 		this->_name         = oldObj._name;
+// 		this->_hitPoints    = oldObj._hitPoints;
+// 		this->_energyPoints = oldObj._energyPoints;
+// 		this->_attackDamage = oldObj._attackDamage;
+// 	}
+// }
 
 
 void    ClapTrap::attack(const std::string& target)
 {
-    (void)target;
     if (_energyPoints > 0 && _hitPoints > 0)
     {
         std::cout<<"ClapTrap "<<_name<<" attacks "<<target<<" , causing ";
-        std::cout<<_attackDemege<<" points of damage!"<<std::endl;
+        std::cout<<_attackDamage<<" points of damage!"<<std::endl;
         _energyPoints--;
     }
     else
@@ -58,9 +71,9 @@ void    ClapTrap::attack(const std::string& target)
     }
 
 }
-void	ClapTrap::setAttackDemege(int nb)
+void	ClapTrap::setAttackDamage(int nb)
 {
-		_attackDemege = nb;
+		_attackDamage = nb;
 }
 
 void    ClapTrap::takeDamage(unsigned int amount)
@@ -94,8 +107,8 @@ void ClapTrap::printAttributes()
     std::cout<<std::endl;
     std::cout<<BOLD<<CYAN<<"Name : "<<_name<<std::endl;
     std::cout<<"Hitint Points : "<<_hitPoints<<std::endl;
-    std::cout<<"Hitint Points : "<<_energyPoints<<std::endl;
-    std::cout<<"Hitint Points : "<<_attackDemege<<RESET<<std::endl;
+    std::cout<<"Energy Points : "<<_energyPoints<<std::endl;
+    std::cout<<"Attack Demege : "<<_attackDamage<<RESET<<std::endl;
     std::cout<<std::endl;
 }
 

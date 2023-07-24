@@ -1,5 +1,6 @@
 
 #include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
 
 ScavTrap::ScavTrap()
 {
@@ -7,7 +8,7 @@ ScavTrap::ScavTrap()
 	_name = "Smt";
     _hitPoints = 100;
     _energyPoints = 50;
-    _attackDemege = 20;
+    _attackDamage = 20;
 }
 
 ScavTrap::ScavTrap(std::string name)
@@ -16,7 +17,7 @@ ScavTrap::ScavTrap(std::string name)
     _name = name;
     _hitPoints = 100;
     _energyPoints = 50;
-    _attackDemege = 20;
+    _attackDamage = 20;
 }
 
 ScavTrap::~ScavTrap()
@@ -24,6 +25,14 @@ ScavTrap::~ScavTrap()
     std::cout<<"ScavTrap Destructor called"<<std::endl;
 }
 
+ScavTrap::ScavTrap(const ScavTrap& other)
+{
+    std::cout<<"ScavTrap Copy constructor called"<<std::endl;
+    this->_name         = other._name;
+    this->_hitPoints    = other._hitPoints;
+    this->_energyPoints = other._energyPoints;
+    this->_attackDamage = other._attackDamage;
+}
 
 void    ScavTrap::attack(const std::string& target)
 {
@@ -31,7 +40,7 @@ void    ScavTrap::attack(const std::string& target)
     if (_energyPoints > 0 && _hitPoints > 0)
     {
         std::cout<<"ScavTrap "<<_name<<" attacks "<<target<<" , causing ";
-        std::cout<<_attackDemege<<" points of damage!"<<std::endl;
+        std::cout<<_attackDamage<<" points of damage!"<<std::endl;
         _energyPoints--;
     }
     else
@@ -40,6 +49,18 @@ void    ScavTrap::attack(const std::string& target)
     }
 }
 
+ScavTrap& ScavTrap::operator=(const ScavTrap &oldObj)
+{
+	if (this != &oldObj)
+	{
+		std::cout<<"ScavTrap Copy assignment operator called"<<std::endl;
+		this->_name         = oldObj._name;
+		this->_hitPoints    = oldObj._hitPoints;
+		this->_energyPoints = oldObj._energyPoints;
+		this->_attackDamage = oldObj._attackDamage;
+	}
+    return (*this);
+}
 void	ScavTrap::guardGate()
 {
 	std::cout<<_name<<" guard Gate"<<std::endl;

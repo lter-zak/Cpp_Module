@@ -27,19 +27,20 @@ class ClapTrap
         ClapTrap();
         ClapTrap(std::string name);
         ~ClapTrap();
-        ClapTrap(const ClapTrap& other);//Copy constractor
+        ClapTrap(const ClapTrap &other);//Copy constractor
         ClapTrap&   operator=(const ClapTrap &oldObj);//Copy assignment operator
+        // void		operator=(const ClapTrap &oldObj);//Copy assignment operator
         void        attack(const std::string& target);
         void        takeDamage(unsigned int amount);
         void        beRepaired(unsigned int amount);
         void        printAttributes();
-		void 		setAttackDemege(int nb);
+		void 		setAttackDamage(int nb);
 
     private:
-        std::string _name;
-        unsigned int _hitPoints;
-        unsigned int _energyPoints;
-        unsigned int _attackDemege;
+        std::string		_name;
+        unsigned int	_hitPoints;
+        unsigned int	_energyPoints;
+        unsigned int	_attackDamage;
         
 };
 

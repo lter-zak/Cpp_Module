@@ -13,7 +13,7 @@ class Zombie{
 	private:
 		std::string _name;
 };
-	
+
 Zombie* newZombie(std::string name);
 
 # endif

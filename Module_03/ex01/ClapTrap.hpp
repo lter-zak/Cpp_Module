@@ -26,20 +26,21 @@ class ClapTrap
     public:
         ClapTrap();
         ClapTrap(std::string name);
-        ~ClapTrap();
+        virtual ~ClapTrap();
         ClapTrap(const ClapTrap& other);//Copy constractor
         ClapTrap&   operator=(const ClapTrap &oldObj);//Copy assignment operator
-        void        attack(const std::string& target);
-        void        takeDamage(unsigned int amount);
-        void        beRepaired(unsigned int amount);
-        void        printAttributes();
-		void 		setAttackDemege(int nb);
 
-    private:
+        virtual void        attack(const std::string& target);
+        void				takeDamage(unsigned int amount);
+        void        		beRepaired(unsigned int amount);
+        void        		printAttributes();
+		void 				setAttackDamage(int nb);
+
+    protected:
         std::string _name;
         unsigned int _hitPoints;
         unsigned int _energyPoints;
-        unsigned int _attackDemege;
+        unsigned int _attackDamage;
         
 };
 

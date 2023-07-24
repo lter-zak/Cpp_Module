@@ -1,15 +1,23 @@
 #include "ClapTrap.hpp"
-
+#include "ScavTrap.hpp"
 int main()
 {
-    ClapTrap obj;
-    ClapTrap obj1("Vazgenchik");
+	ScavTrap Scav("Gurgen");
+	ScavTrap Scav1(Scav);
+	ScavTrap Scav2;
 
-    obj.printAttributes();
-	obj.setAttackDemege(2);
-    obj.attack("Karenchik");
-	obj.takeDamage(5);
-	obj.printAttributes();
-	obj.beRepaired(2);
+	Scav2 = Scav1;
+	
+	Scav.printAttributes();
+	Scav.attack("Mekin");
+
+	Scav.printAttributes();
+	Scav.takeDamage(10);
+
+	Scav.printAttributes();
+	Scav.beRepaired(5);
+
+	Scav.printAttributes();
+	Scav.guardGate();
     return (0);
 }

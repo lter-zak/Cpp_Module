@@ -2,11 +2,17 @@
 
 Zombie :: Zombie(std::string name)
 {
+	std::cout << "constructor\n";
 	_name = name;
 }
-Zombie :: Zombie(){}
+Zombie :: Zombie(){
+	std::cout << "constructor\n";
 
-Zombie :: ~Zombie(){}
+}
+
+Zombie :: ~Zombie() {
+	std::cout << "destructor\n";
+}
 
 void Zombie::announce()
 {
