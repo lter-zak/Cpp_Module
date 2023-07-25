@@ -20,8 +20,8 @@ Animal::~Animal()
 
 Animal::Animal(const Animal& oldobj)
 {
-     std::cout<<"Animal Copy constructor called"<<std::endl;
-     _type = oldobj._type;
+    std::cout<<"Animal Copy constructor called"<<std::endl;
+    _type = oldobj._type;
 }
 
 // a = b = c;
@@ -30,8 +30,8 @@ Animal::Animal(const Animal& oldobj)
 // a.operator=(b.operator=(c));
 Animal& Animal::operator=(const Animal& oldobj)
 {
-     std::cout<<"Animal Copy assignment operator called"<<std::endl;
-     if (this == &oldobj)
+    std::cout<<"Animal Copy assignment operator called"<<std::endl;
+    if (this == &oldobj)
         return (*this);
     this->_type = oldobj._type;
     return (*this);
