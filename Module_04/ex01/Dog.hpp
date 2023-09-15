@@ -12,7 +12,7 @@ class Dog : public Animal
         Dog(const Dog& oldobj);
         Dog& operator = (const Dog& oldobj);
 
-        virtual void makeSound() const;
+        void makeSound() const;
 
         private:
             Brain* _DogBrain;

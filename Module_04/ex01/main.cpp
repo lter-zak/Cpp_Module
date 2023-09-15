@@ -17,6 +17,11 @@ int main()
    }
    for (int i = 0; i < AnimalNumber; i++)
         delete AnimalArr[i];
+	//system("leaks Animal");
+	// Dog basic;
+	// {
+	// 	Dog tmp = basic;
+	// }
     // std::cout<<"\n-----WrongAnimal-----"<<std::endl;
 
     // const WrongAnimal* Wrongmeta = new WrongAnimal();

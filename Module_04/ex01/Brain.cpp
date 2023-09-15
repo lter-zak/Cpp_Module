@@ -17,7 +17,8 @@ Brain::~Brain()
 
 Brain::Brain(const Brain& oldobj)
 {
-     std::cout<<"Brain Copy constructor called"<<std::endl;
+    std::cout<<"Brain Copy constructor called"<<std::endl;
+	*this = oldobj;
 }
 
 Brain& Brain::operator=(const Brain& oldobj)
@@ -25,6 +26,9 @@ Brain& Brain::operator=(const Brain& oldobj)
     std::cout<<"Brain Copy assignment operator called"<<std::endl;
     if (this == &oldobj)
         return (*this);
-    *this->_ideas = *oldobj._ideas;   //?????
+    for (size_t i = 0; i < 100 ; ++i)
+	{
+		this->_ideas[i] = oldobj._ideas[i];
+	}
     return (*this);
 }

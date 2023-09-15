@@ -1,9 +1,14 @@
 #include "Cure.hpp"
 
-Cure::Cure(std::string const &type)
+Ice::Cure()
+{
+	std::cout<<"Cure Default constructor called"<<std::endl;
+	_type = "type";
+}
+Cure::Cure(const Cure& cure)
 {
 	std::cout<<"Cure Copy constructor called"<<std::endl;
-	_type = type;
+	_type = cure._type;
 }
 
 Cure::~Cure()
@@ -24,4 +29,14 @@ Cure& Cure::operator = (const AMateria& oldobj)
         return (*this);
     this->_type = oldobj._type;
     return (*this);
+}
+
+AMateria* clone() const
+{
+	retrun( new Cure(*this) );
+}
+
+void use(ICharacter& target)
+{
+	std::cout<<"* heals "<<_name<<"s wounds *";
 }

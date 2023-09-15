@@ -1,9 +1,15 @@
 #include "Ice.hpp"
 
-Ice::Ice(std::string const &type)
+Ice::Ice()
+{
+	std::cout<<"Ice Default constructor called"<<std::endl;
+	_type = "type";
+}
+
+Ice::Ice(const Ice& ice)
 {
 	std::cout<<"Ice Copy constructor called"<<std::endl;
-	_type = type;
+	_type = ice._type;
 }
 
 Ice::~Ice()
@@ -24,4 +30,9 @@ Ice& Ice::operator = (const AMateria& oldobj)
         return (*this);
     this->_type = oldobj._type;
     return (*this);
+}
+
+AMateria* clone() const
+{
+	retrun( new Ice(*this) );
 }

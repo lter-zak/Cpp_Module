@@ -2,7 +2,7 @@
 
 AMateria::AMateria(std::string const &type)
 {
-	std::cout<<"AMateria Copy constructor called"<<std::endl;
+	std::cout<<"AMateria constructor called"<<std::endl;
 	 _type = type;
 }
 

@@ -13,6 +13,7 @@ class  WrongAnimal
 
         const std::string& getType() const;
         virtual void        makeSound() const;
+
     protected:
         std::string _type;
 };

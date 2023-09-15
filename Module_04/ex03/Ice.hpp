@@ -6,10 +6,13 @@
 class Ice : public AMateria
 {
 	public:
-		Ice(std::string const & type);
+		Ice(void);
+		Ice(const Ice& ice);
 		~Ice();
 		Ice(const Ice& oldobj);
 		Ice& operator = (const Ice& oldobj);
+		AMateria* clone() const;
+		void use(ICharacter& target);
 };
 
 #endif

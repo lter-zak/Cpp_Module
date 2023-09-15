@@ -2,6 +2,7 @@
 
 WrongAnimal::WrongAnimal()
 {
+	_type = "WrongAnimal";
     std::cout<<"WrongAnimal Default constructor called"<<std::endl;
 }
 
