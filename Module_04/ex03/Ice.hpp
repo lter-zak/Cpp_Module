@@ -7,11 +7,10 @@ class Ice : public AMateria
 {
 	public:
 		Ice(void);
-		Ice(const Ice& ice);
 		~Ice();
-		Ice(const Ice& oldobj);
+		Ice(const Ice& oldIce);
 		Ice& operator = (const Ice& oldobj);
-		AMateria* clone() const;
+		Ice* clone() const;
 		void use(ICharacter& target);
 };
 

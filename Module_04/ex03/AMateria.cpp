@@ -1,8 +1,14 @@
 #include "AMateria.hpp"
 
-AMateria::AMateria(std::string const &type)
+AMateria::AMateria(void)
 {
 	std::cout<<"AMateria constructor called"<<std::endl;
+	_type = "type";
+}
+
+AMateria::AMateria(std::string const &type)
+{
+	std::cout<<"AMateria parameter constructor called"<<std::endl;
 	 _type = type;
 }
 
@@ -14,7 +20,7 @@ AMateria::~AMateria()
 AMateria::AMateria(const AMateria& oldobj)
 {
 	std::cout<<"Animal Copy constructor called"<<std::endl;
-	_type = oldobj.type;
+	_type = oldobj._type;
 }
 
 AMateria& AMateria::operator = (const AMateria& oldobj)
@@ -28,8 +34,7 @@ AMateria& AMateria::operator = (const AMateria& oldobj)
 
 std::string const& AMateria::getType() const
 {
-	retrun (_type);
+	return (_type);
 }
 
-// virtual AMateria* clone() const = 0;
 // virtual void use(ICharacter& target);

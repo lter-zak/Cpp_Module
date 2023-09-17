@@ -4,17 +4,20 @@
 #include <iostream>	
 #include <string.h>
 
-
+#include "Ice.hpp"
+#include "Cure.hpp"
+#include "ICharacter.hpp"
 class AMateria
 {
 	protected:
 		std::string& _type;
 	
 	public:
+		AMateria(void);
 		AMateria(std::string const & type);
 		virtual ~AMateria();
-		Animal(const Animal& oldobj);
-        Animal& operator = (const Animal& oldobj);
+		AMateria(const AMateria& oldobj);
+        AMateria& operator = (const AMateria& oldobj);
 
 		std::string const& getType() const; //Returns the materia type
 

@@ -2,7 +2,6 @@
 #define CHARACTER_HPP
 
 #include "ICharacter.hpp"
-
 class Character: public ICharacter
 {
 	public:
@@ -17,7 +16,9 @@ class Character: public ICharacter
 		void unequip(int idx);
 		void use(int idx, ICharacter& target);
 	private:
-		AMateria arr[4];
+		AMateria	Materias[4];
+		AMateria	leftMaterias[4];
+		std::string	_name;
 
 		
 }
