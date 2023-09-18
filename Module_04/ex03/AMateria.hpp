@@ -4,13 +4,14 @@
 #include <iostream>	
 #include <string.h>
 
-#include "Ice.hpp"
-#include "Cure.hpp"
 #include "ICharacter.hpp"
+
+class ICharacter;
+
 class AMateria
 {
 	protected:
-		std::string& _type;
+		std::string _type;
 	
 	public:
 		AMateria(void);

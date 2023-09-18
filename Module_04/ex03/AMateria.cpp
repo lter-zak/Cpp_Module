@@ -2,7 +2,7 @@
 
 AMateria::AMateria(void)
 {
-	std::cout<<"AMateria constructor called"<<std::endl;
+	std::cout<<"AMateria default constructor called"<<std::endl;
 	_type = "type";
 }
 
@@ -37,4 +37,8 @@ std::string const& AMateria::getType() const
 	return (_type);
 }
 
-// virtual void use(ICharacter& target);
+void use(ICharacter& target)
+{
+	(void)target;
+	std::cout<<"[use] -> This type does not exists"<<std::endl;
+}
