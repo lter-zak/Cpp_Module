@@ -48,7 +48,7 @@ Character& Character::operator=(const Character& t)
 		{
 				delete this->Materias[i];
 			if (t.Materias[i] != NULL)
-				this->Materias[i] = t.Materias[i];
+				this->Materias[i] = t.Materias[i]->clone();
 			else
 				this->Materias[i] = NULL;
 		}

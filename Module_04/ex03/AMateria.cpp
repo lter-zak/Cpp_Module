@@ -37,7 +37,7 @@ std::string const& AMateria::getType() const
 	return (_type);
 }
 
-void use(ICharacter& target)
+void AMateria::use(ICharacter& target)
 {
 	(void)target;
 	std::cout<<"[use] -> This type does not exists"<<std::endl;

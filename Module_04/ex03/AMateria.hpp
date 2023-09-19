@@ -3,7 +3,6 @@
 
 #include <iostream>	
 #include <string.h>
-
 #include "ICharacter.hpp"
 
 class ICharacter;
@@ -12,7 +11,6 @@ class AMateria
 {
 	protected:
 		std::string _type;
-	
 	public:
 		AMateria(void);
 		AMateria(std::string const & type);
