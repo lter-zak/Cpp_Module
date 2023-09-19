@@ -62,7 +62,7 @@ std::string const & Character::getName() const
 }
 
 
-void equip(AMateria* m)
+void Character::equip(AMateria* m)
 {
 	for (int i = 0; i < 4; i++)
 	{
@@ -75,7 +75,7 @@ void equip(AMateria* m)
 	std::cout<<"[equip] -> Character can't equip"<<std::endl;
 }
 
-void unequip(int idx)
+void Character::unequip(int idx)
 {
 	if (idx < 0 || idx > 3)
 		std::cout<<"[unequip] -> Index number is not correct";
@@ -95,6 +95,6 @@ void unequip(int idx)
 
 void Character::use(int idx, ICharacter& target)
 {
-	if (target.Materias[idx] != NULL)
-		use(target);
+	if (idx >= 0 && idx < 4 && Materias[idx] != NULL)
+		Materias[idx]->use(target);
 }

@@ -26,7 +26,7 @@ Cure& Cure::operator=(const Cure& oldobj)
     return (*this);
 }
 
-Cure* clone() const
+Cure* Cure::clone() const
 {
 	return( new Cure(*this) );
 }

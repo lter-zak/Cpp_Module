@@ -26,7 +26,7 @@ Ice& Ice::operator=(const Ice &oldobj)
     return (*this);
 }
 
-Ice* clone() const
+Ice* Ice::clone() const
 {
 	return( new Ice(*this) );
 }
