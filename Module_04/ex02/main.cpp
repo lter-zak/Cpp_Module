@@ -6,7 +6,7 @@
 int main()
 {
 
-   // const Animal* meta = new Animal(); iranic menak petqa jarangen 
+   //	const Animal* meta = new Animal(); //iranic menak petqa jarangen 
     const Animal* j = new Dog();
     const Animal* i = new Cat();
 
@@ -15,11 +15,11 @@ int main()
 
     i->makeSound(); //will output the cat sound!
     j->makeSound();
-    //meta->makeSound();
+   // meta->makeSound();
 
     delete i;
     delete j;
-    //delete meta;
+   // delete meta;
 
 
    int AnimalNumber = 8;

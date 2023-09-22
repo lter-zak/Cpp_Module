@@ -1,11 +1,10 @@
-
-NAME		= Animal
-SRCS    	= $(shell find . -name "*.cpp")
+NAME		= easyfind
+SRCS    	= main.cpp
 OBJS		= $(SRCS:.cpp=.o)
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
 RM			= rm -f
 CPP			= c++
-HEADER		= $(shell find . -name "*.hpp")
+
 
 all: $(NAME)
 

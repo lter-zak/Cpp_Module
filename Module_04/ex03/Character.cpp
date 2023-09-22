@@ -11,7 +11,7 @@ Character::Character()
 	}
 }
 
-Character::Character(std::string name)
+Character::Character(const std::string &name)
 {
 	std::cout<<"Character parameter constructor called"<<std::endl;
 	_name = name;
@@ -31,9 +31,14 @@ Character::Character(const Character& t)
 {
 	std::cout<<"Character Copy constructor called"<<std::endl;
 	this->_name = t._name;
+	for (int i = 0; i < 4; i++)	
+	{
+		Materias[i] = NULL;
+		leftMaterias[i] = NULL;
+	}
 	for (int i = 0; i < 4; i++)
 	{
-		if (this->Materias[i] != NULL)
+		if (t.Materias[i] != NULL) //TODO t.Materias[i] != NULL
 			this->Materias[i] = t.Materias[i]->clone();
 	}
 }
@@ -46,11 +51,9 @@ Character& Character::operator=(const Character& t)
 		this->_name = t._name;
 		for (int i = 0; i < 4; i++)
 		{
-				delete this->Materias[i];
+				delete this->Materias[i]; //  TODO review
 			if (t.Materias[i] != NULL)
 				this->Materias[i] = t.Materias[i]->clone();
-			else
-				this->Materias[i] = NULL;
 		}
 	}
 	return (*this);

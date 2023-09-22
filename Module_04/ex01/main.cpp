@@ -5,18 +5,30 @@
 
 int main()
 {
-   int AnimalNumber = 8;
-   Animal* AnimalArr[AnimalNumber];
+	// Dog basic;
+	// {
+	// 	Dog tmp = basic;
+	// }
+//----------------------------
+	Dog s;
+	Dog b;
+	s = b;
+	
+//----------------------------
 
-   for (int i = 0; i < AnimalNumber; i++)
-   {
-     if (i > 0 && i <= AnimalNumber/2)
-        AnimalArr[i] = new Cat();
-    else 
-         AnimalArr[i] = new Dog();
-   }
-   for (int i = 0; i < AnimalNumber; i++)
-        delete AnimalArr[i];
+//    int AnimalNumber = 8;
+//    Animal* AnimalArr[AnimalNumber];
+
+//    for (int i = 0; i < AnimalNumber; i++)
+//    {
+//      if (i > 0 && i <= AnimalNumber/2)
+//         AnimalArr[i] = new Cat();
+//     else 
+//          AnimalArr[i] = new Dog();
+//    }
+//    for (int i = 0; i < AnimalNumber; i++)
+//         delete AnimalArr[i];
+
 	//system("leaks Animal");
 	// Dog basic;
 	// {

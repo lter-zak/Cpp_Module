@@ -12,7 +12,7 @@ class Cat : public Animal
         Cat(const Cat& oldobj);
         Cat& operator = (const Cat& oldobj);
 
-        void makeSound();
+        void makeSound() const;
 
         private:
             Brain* _CatBrain;

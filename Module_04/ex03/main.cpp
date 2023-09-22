@@ -11,6 +11,7 @@ int main()
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
 	ICharacter* me = new Character("me");
+	ICharacter* you = new Character("you");
 
 	AMateria* tmp;
 	tmp = src->createMateria("ice");

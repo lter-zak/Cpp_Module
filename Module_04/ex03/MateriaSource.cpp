@@ -10,7 +10,7 @@ MateriaSource::MateriaSource()
 MateriaSource::~MateriaSource()
 {
     std::cout<<"MateriaSource Destructor called"<<std::endl;
-    for(int i =0; i < 4; i++)
+    for(int i = 0; i < 4; i++)
     {
         if (Materias[i] != NULL)
         {

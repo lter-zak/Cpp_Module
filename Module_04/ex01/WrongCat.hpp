@@ -12,7 +12,7 @@ class WrongCat : public WrongAnimal
         WrongCat(const WrongCat& oldobj);
         WrongCat& operator = (const WrongCat& oldobj);
 
-        void makeSound();
+        void makeSound() const;
 };
 
 # endif 

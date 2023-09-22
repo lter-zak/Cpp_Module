@@ -10,7 +10,7 @@ class Cure : public AMateria
 		~Cure();
 		Cure(const Cure& oldCure);
 		Cure& operator=(const Cure& oldobj);
-		Cure* clone() const;
+		Cure* clone() const;  // virtual AMateria* clone() const = 0;
 		void use(ICharacter& target);
 };
 

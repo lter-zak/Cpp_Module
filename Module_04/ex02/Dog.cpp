@@ -4,13 +4,14 @@ Dog::Dog()
 {
     std::cout<<"Dog Default constructor called"<<std::endl;
     _type = "Dog";
-     _DogBrain = new Brain();
+    _DogBrain = new Brain();
 }
 
 Dog::Dog(std::string type)
 {
      std::cout<<"Dog Default parameter constructor called"<<std::endl;
     _type = type;
+	_DogBrain = new Brain();
 }
 
 Dog::~Dog()
@@ -29,10 +30,12 @@ Dog::Dog(const Dog& oldobj)
 
 Dog& Dog::operator=(const Dog& oldobj)
 {
-     std::cout<<"Dog Copy assignment operator called"<<std::endl;
-     if (this == &oldobj)
+    std::cout<<"Dog Copy assignment operator called"<<std::endl;
+    if (this == &oldobj)
         return (*this);
+		delete _DogBrain;
     this->_type = oldobj._type;
+	this->_DogBrain = new Brain(*oldobj._DogBrain);
     return (*this);
 }
 
