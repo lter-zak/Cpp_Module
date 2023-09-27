@@ -12,6 +12,23 @@ Span::Span(unsigned int size)
 	std::cout<<"Parameterized constructor called"<<std::endl;
 }
 
+Span::Span(const Span& oldobj)
+{
+	std::cout<<"Copy constructor called"<<std::endl;
+	*this = oldobj;	
+}
+
+Span& Span::operator = (const Span& oldobj)
+{
+	std::cout<<"Copy assignment operator called"<<std::endl;
+	if (this != &oldobj)
+	{
+		_n = oldobj._n;
+		_numbers = oldobj._numbers;
+	}
+	return (*this);
+}
+
 Span::~Span()
 {
 	std::cout<<"Destructor called"<<std::endl;
@@ -19,45 +36,36 @@ Span::~Span()
 
 void Span::addNumber(unsigned int num)
 {
-//std::cout<<num<<"+++++++"<<std::endl;
-	// if (_numbers.size() < _n)
-	// {
-
-
-	// 	_numbers.push_back(num);
-	// }
-	// else
-	// 	throw "No space for the element in your container";
+	if (_numbers.size() < _n)
+		_numbers.push_back(num);
+	else
+		throw "No space for the element in your container";
 }
 
 
-// template <typename T>
-// void Span::fillNumber(T begin, T end)
-// {
-// 	 std::cout<<"Begin "<<*begin<<std::endl;
-// }
 
-// void Span::fillNumber(int count)
-// {
-// 	int tmp = count;
-// 	std::vector<int>::const_iterator iter = _numbers.begin();
-// 	std::vector<int>::const_iterator iterEnd = _numbers.end();
-// 	// std::cout<<"-----"<<*(_numbers.end()-1)<<std::endl;
-// 	if (count > _n)
-// 		tmp = _n;
-// 	int	arr[tmp];
+unsigned int Span::shortestSpan()
+{
+	if(_numbers.size()<=1)
+		throw "Exception: there are no numbers stored,or only one";
+	std::vector<int>::iterator	itr = _numbers.begin();
+	unsigned int 				min = *(itr+1)-(*itr);
 
-// 	for (int i = 0; i < tmp; i++)
-// 		arr[i] = i;
-// 	for (iterEnd; iter != _numbers.end()  ; iter++)
-// 		std::cout<<"_number = "<<*iter<<std::endl;
-// 	for (; iter != _numbers.end()  ; iter++)
-// 		std::cout<<"_number = "<<*iter<<std::endl;
-// 	// for (iter; iter < _n -_numbers.size() )
-// 	// 	_numbers.push_back(i);
-// 	// for (int num : _numbers)
-// 	// {
-// 	// 	std::cout<<"Nu,"<<num<<std::endl;
-// 	// 	//addNumber(3);
-// 	// }
-// }
+	std::sort(_numbers.begin(), _numbers.end());
+	for( ; itr!=_numbers.end()-1; ++itr)
+	{
+		if(min > *(itr + 1) - *itr)
+		{
+			min = *(itr + 1) - *itr;
+		}
+	}
+	return min;
+}
+
+unsigned int Span::longestSpan()
+{
+	if(_numbers.size()<=1)
+		throw "Exception: there are no numbers stored,or only one";
+	std::sort(_numbers.begin(), _numbers.end());
+	return _numbers[_numbers.size() - 1] - _numbers[0];
+}
