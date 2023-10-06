@@ -8,7 +8,7 @@
 class Bureaucrat
 {
 	public:
-		Bureaucrat();
+		Bureaucrat()
 		Bureaucrat(std::string _name, int _grade);
 		~Bureaucrat();
 		Bureaucrat(const Bureaucrat& oldobj); //copy constructor  

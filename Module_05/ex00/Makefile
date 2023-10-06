@@ -3,6 +3,7 @@ NAME		= bureaucrat
 SRCS    	= $(shell find . -name "*.cpp")
 OBJS		= $(SRCS:.cpp=.o)
 HEADER		= $(shell find . -name "*.hpp")
+HEDEROBJS		= $(SRCS:.hpp)
 CXXFLAGS		= -Wall -Wextra -Werror -std=c++98
 RM			= rm -f
 CPP			= c++
@@ -10,14 +11,14 @@ CPP			= c++
 
 all: $(NAME)
 
-$(NAME) : $(OBJS)
+$(NAME) : $(OBJS) $(HEDEROBJS)
 		@echo $(NONE)$(BLUE) "\n\t\t🤹 Compiling $(NAME)... \n" $(NONE)
-		$(CPP) $(CXXFLAGS) $(OBJS) -o $(NAME)
+		$(CPP) $(CXXFLAGS) $(OBJS) $(HEDEROBJS) -o $(NAME)
 		@echo $(NONE)$(BLUE)"\n\t\t😱 Compiled   $(NAME)\n"$(NONE)
 
 clean	:
 		@echo $(YELLOW) "\n\t\t🙀 Removing object files...\n" $(NONE)
-		$(RM) $(OBJS)
+		$(RM) $(OBJS) 
 
 fclean	: 	clean
 			@echo $(MAGENTA) "\n\t\t🙀 Removing $(NAME)...\n" $(NONE)
